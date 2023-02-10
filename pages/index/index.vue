@@ -1,62 +1,65 @@
 <template>
 	<view class="content">
 		<view class="swiper">
-			<u-swiper :list="list1"></u-swiper>
+			<u-swiper :list="list1" previousMargin="20" nextMargin="20" circular radius="5" bgColor="#ffffff">
+			</u-swiper>
 		</view>
-		<!-- <view class="iconfont icon-qinggan"></view> -->
+		<!-- <view class="icon"></view> -->
 		<view class="nav">
 			<view class="nav-item">
-				<view class="iconfont icon-qinggan"></view>
-				<view class="label">人才招聘</view>
-			</view>
-			<view class="nav-item">
-				<view class="iconfont icon-qinggan"></view>
+				<view class="icon xian-story"></view>
 				<view class="label">西安城事</view>
 			</view>
 			<view class="nav-item">
-				<view class="iconfont icon-qinggan"></view>
-				<view class="label">曝光台</view>
-			</view>
-			<view class="nav-item">
-				<view class="iconfont icon-qinggan"></view>
-				<view class="label">情感天地</view>
-			</view>
-			<view class="nav-item">
-				<view class="iconfont icon-qinggan"></view>
-				<view class="label">征婚交友</view>
-			</view>
-			<view class="nav-item">
-				<view class="iconfont icon-qinggan"></view>
-				<view class="label">企业招聘</view>
-			</view>
-			<view class="nav-item">
-				<view class="iconfont icon-qinggan"></view>
+				<view class="icon house-rent"></view>
 				<view class="label">房屋租赁</view>
 			</view>
 			<view class="nav-item">
-				<view class="iconfont icon-qinggan"></view>
+				<view class="icon lighthouse"></view>
+				<view class="label">曝光台</view>
+			</view>
+			<view class="nav-item">
+				<view class="icon marriage-seeking"></view>
+				<view class="label">征婚交友</view>
+			</view>
+			<view class="nav-item">
+				<view class="icon secondhand-market"></view>
 				<view class="label">二手市场</view>
 			</view>
-			<view class="nav-item">
-				<view class="iconfont icon-qinggan"></view>
-				<view class="label">二手车</view>
-			</view>
-			<view class="nav-item">
-				<view class="iconfont icon-qinggan"></view>
-				<view class="label">全部板块</view>
-			</view>
 		</view>
+		<!-- <view class="separator"></view> -->
+		<u-line length="96%" margin="10px"></u-line>
+		<post-preview title="怎么学习微信小程序怎么学习微信小程序怎么学习微信小程序怎么学习微信小程序怎么学习微信小程序" :imageList="images1"></post-preview>
+		<!-- <view class="separator"></view> -->
+		<u-line length="96%" margin="10px"></u-line>
+		<post-preview title="怎么学习微信小程序怎么学习微信小程序怎么学习微信小程序怎么学习微信小程序怎么学习微信小程序" :imageList="images2"></post-preview>
+		<!-- <view class="separator"></view> -->
+		<u-line length="96%" margin="10px"></u-line>
+		<post-preview title="怎么学习微信小程序怎么学习微信小程序怎么学习微信小程序怎么学习微信小程序怎么学习微信小程序"></post-preview>
+		<u-line length="96%" margin="10px"></u-line>
 	</view>
 </template>
 
 <script>
+	import PostPreview from '../../components/post-preview.vue';
 	export default {
+		components: {
+			'post-preview': PostPreview
+		},
 		data() {
 			return {
 				list1: [
 					'https://cdn.uviewui.com/uview/swiper/swiper1.png',
 					'https://cdn.uviewui.com/uview/swiper/swiper2.png',
 					'https://cdn.uviewui.com/uview/swiper/swiper3.png',
+				],
+				images1: [
+					'https://cdn.uviewui.com/uview/album/1.jpg',
+					'https://cdn.uviewui.com/uview/album/2.jpg',
+					'https://cdn.uviewui.com/uview/album/3.jpg'
+				],
+				images2: [
+					'https://cdn.uviewui.com/uview/album/1.jpg'
 				]
 			}
 		},
@@ -69,7 +72,7 @@
 	}
 </script>
 
-<style lang="scss">
+<style scoped lang="scss">
 	.content {
 		display: flex;
 		flex-direction: column;
@@ -78,39 +81,71 @@
 
 		.swiper {
 			/* height: 100%; */
-			width: 96%;
+			width: 100%;
 		}
 
 		.nav {
-			margin-top: 20px;
+			width: 96%;
+			margin: 20px 0 15px;
+			;
 			display: flex;
-			justify-content: center;
 			align-items: center;
-			flex-wrap: wrap;
-			height: 180px;
+			justify-content: space-between;
 
-			// .zhaopin {
-			// 	background: url('@/static/zhaopin.png') no-repeat;
-			// }
 			.nav-item {
-				text-align: center;
+				// text-align: center;
+				display: flex;
+				flex-direction: column;
+				align-items: center;
 
-				.iconfont {
-					font-size: 50px;
-					margin: 0 10px;
-					width: 50px;
-					height: 50px;
-					border-radius: 30px;
+				.icon {
+					/* font-size: 40px; */
+					/* margin: 0 5px; */
+					width: 40px;
+					height: 40px;
+					/* border-radius: 30px; */
 					color: #fff;
-					background-color: #6ab600;
+					background-size: 40px 40px;
+					background-repeat: no-repeat;
+				}
+
+				.xian-story {
+					background-image: url('../../static/images/xian_story.png');
+				}
+
+				.lighthouse {
+					background-image: url('../../static/images/lighthouse.png');
+				}
+
+				.marriage-seeking {
+					background-image: url('../../static/images/marriage_seeking.png');
+				}
+
+				.house-rent {
+					background-image: url('../../static/images/house_rent.png');
+				}
+
+				.secondhand-market {
+					background-image: url('../../static/images/secondhand_market.png');
 				}
 
 				.label {
-					font-size: 14px;
-					padding: 4px 0;
+					font-size: 12px;
+					padding-top: 4px;
 				}
 
 			}
+		}
+
+		.separator {
+			width: 96%;
+			margin: 10px 0;
+			// height: 1px;
+			border-top: 1px solid #ccc;
+		}
+
+		post-preview {
+			width: 100%;
 		}
 	}
 </style>
