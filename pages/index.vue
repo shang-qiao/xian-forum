@@ -37,17 +37,25 @@
 		<u-line length="96%" margin="10px"></u-line>
 		<post-preview title="怎么学习微信小程序怎么学习微信小程序怎么学习微信小程序怎么学习微信小程序怎么学习微信小程序"></post-preview>
 		<u-line length="96%" margin="10px"></u-line>
+<!-- 		<u-tabbar :value="value6" @change="name => value6 = name" :fixed="true" :placeholder="true"
+			:safeAreaInsetBottom="true">
+			<u-tabbar-item text="首页" icon="home"></u-tabbar-item>
+			<u-tabbar-item text="放映厅" icon="photo"></u-tabbar-item>
+			<u-tabbar-item text="直播" icon="play-right"></u-tabbar-item>
+			<u-tabbar-item text="我的" icon="account"></u-tabbar-item>
+		</u-tabbar> -->
 	</view>
 </template>
 
 <script>
-	import PostPreview from '../../components/post-preview.vue';
+	import PostPreview from '../components/post-preview.vue';
 	export default {
 		components: {
 			'post-preview': PostPreview
 		},
 		data() {
 			return {
+				value6: 0,
 				list1: [
 					'https://cdn.uviewui.com/uview/swiper/swiper1.png',
 					'https://cdn.uviewui.com/uview/swiper/swiper2.png',
@@ -110,23 +118,23 @@
 				}
 
 				.xian-story {
-					background-image: url('../../static/images/xian_story.png');
+					background-image: url('../static/images/xian_story.png');
 				}
 
 				.lighthouse {
-					background-image: url('../../static/images/lighthouse.png');
+					background-image: url('../static/images/lighthouse.png');
 				}
 
 				.marriage-seeking {
-					background-image: url('../../static/images/marriage_seeking.png');
+					background-image: url('../static/images/marriage_seeking.png');
 				}
 
 				.house-rent {
-					background-image: url('../../static/images/house_rent.png');
+					background-image: url('../static/images/house_rent.png');
 				}
 
 				.secondhand-market {
-					background-image: url('../../static/images/secondhand_market.png');
+					background-image: url('../static/images/secondhand_market.png');
 				}
 
 				.label {

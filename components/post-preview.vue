@@ -1,6 +1,6 @@
 <template>
 	<view class="post_preview">
-		<view class="container">
+		<view class="container" @click="handleClick">
 			<view class="title">
 				<u--text :lines="lines" :text="title"></u--text>
 			</view>
@@ -42,6 +42,14 @@
 		computed: {
 			lines: function() {
 				return this.imageList.length >= 3 ? 2 : 3;
+			}
+		},
+		methods: {
+			handleClick() {
+				console.log('click');
+				uni.navigateTo({
+					url: '/pages/post-details'
+				})
 			}
 		}
 	}
